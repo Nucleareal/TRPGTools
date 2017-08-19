@@ -1,0 +1,35 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>アリアンロッド2E キャラクター保管庫 to チャットパレット変換</title>
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="arianrhod.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>アリアンロッド2E キャラクター保管庫 to チャットパレット変換</h1>
+		<hr>
+
+		<h2>テキスト出力した文章を貼り付ける場所</h2>
+		
+		<textarea id="source" value=""></textarea>
+		<input type="button" onclick="convertPalette()" value="変換">
+		<h2>コピペ用文字列</h2>
+		<textarea id="destination" value=""></textarea>
+		<button class="btn" data-clipboard-action="copy" data-clipboard-target="#destination">コピー</button>
+		
+		<hr>
+		<h2>使用ライブラリ</h2>
+		clipboard.js (Released under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>)
+		
+		<script type="text/javascript" src="./clipboard.min.js"></script>
+		<script type="text/javascript" src="./arianrhod.js"></script>
+		<script type="text/javascript">
+			var clipboard = new Clipboard('.btn');
+			clipboard.on('success', function(e) {
+				alert('クリップボードにコピーしました');
+			});
+		</script>
+	</body>
+</html>
